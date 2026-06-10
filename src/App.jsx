@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import LenisScroll from './components/LenisScroll'
 import Loader from './components/Loader'
-import KunaiCursor from './components/KunaiCursor'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -17,7 +16,6 @@ function App() {
 
   return (
     <LenisScroll>
-      <KunaiCursor />
       {loading && <Loader onComplete={() => setLoading(false)} />}
       
       {!loading && (

@@ -33,8 +33,12 @@
     color: var(--foreground);
     font-family: var(--font-sans);
     overflow-x: hidden;
-    cursor: none;
-    /* Hide default cursor for custom Kunai cursor */
+    /* Use the Minato Kunai cursor natively for perfect performance! */
+    cursor: url('/minato_normal_select.cur'), auto;
+  }
+  
+  a, button, [role="button"], input, select, textarea {
+    cursor: url('/minato_link_select.ani'), url('/minato_normal_select.cur'), pointer;
   }
 }
 

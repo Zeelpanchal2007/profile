@@ -32,32 +32,26 @@ export default function KunaiCursor() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[100] pointer-events-none mix-blend-difference"
+      className="fixed top-0 left-0 z-[9999] pointer-events-none"
       animate={{
-        x: mousePosition.x - (isHovering ? 24 : 12),
-        y: mousePosition.y - (isHovering ? 24 : 12),
-        scale: isHovering ? 1.5 : 1,
-        rotate: isHovering ? 45 : 0,
+        x: mousePosition.x - 8, // slight offset to align the visual tip
+        y: mousePosition.y - 8,
+        scale: isHovering ? 1.3 : 1,
+        rotate: isHovering ? -15 : 0, // tilt slightly when hovering clickable items
       }}
-      transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.5 }}
+      // Extremely tight spring for zero-latency feel
+      transition={{ type: "spring", stiffness: 2000, damping: 50, mass: 0.1 }}
     >
-      {/* Simple Kunai SVG representation */}
-      <svg 
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="1.5" 
-        className={`${isHovering ? 'text-primary' : 'text-foreground'}`}
-      >
-        {/* Kunai blade */}
-        <path d="M12 2L6 10L12 18L18 10L12 2Z" fill={isHovering ? "currentColor" : "none"} />
-        {/* Handle */}
-        <line x1="12" y1="18" x2="12" y2="22" strokeWidth="2" />
-        {/* Ring */}
-        <circle cx="12" cy="22" r="2" />
-      </svg>
+      <img 
+        src="/kunai-cursor.png" 
+        alt="Kunai Cursor"
+        className="w-10 h-10 md:w-14 md:h-14 drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)]"
+        style={{
+          // The uploaded image points top-right. 
+          // Flipping it horizontally makes it point to the standard top-left cursor location!
+          transform: 'scaleX(-1) rotate(-10deg)', 
+        }}
+      />
     </motion.div>
   );
 }
