@@ -54,8 +54,8 @@ export default function Hero() {
           </h2>
           
           <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black leading-none tracking-tighter mb-6 text-shadow-glow text-primary">
-            <span className="block">ZEEL</span>
-            <span className="block mt-2">PANCHAL</span>
+            <span className="block">PANCHAL</span>
+            <span className="block mt-2">ZEEL</span>
           </h1>
 
           <div className="overflow-hidden">

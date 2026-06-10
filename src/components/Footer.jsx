@@ -29,14 +29,11 @@ export default function Footer() {
       <div className="container mx-auto px-6 relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
         
         <div className="flex items-center gap-4">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-            <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/>
-            <path d="M2.05 12h19.9"/>
-            <path d="M12 2.05v19.9"/>
-          </svg>
+          <span className="inline-block w-10 h-10 rounded-full overflow-hidden border border-primary/30 shadow-[0_0_10px_rgba(255,87,34,0.3)] animate-spin">
+            <img src="/sharingan.png" alt="Sharingan" className="w-full h-full object-cover" />
+          </span>
           <div>
-            <h3 className="text-xl font-black uppercase tracking-widest text-foreground">Zeel Panchal</h3>
+            <h3 className="text-xl font-black uppercase tracking-widest text-foreground">Panchal Zeel</h3>
             <p className="text-xs font-mono text-foreground/50 uppercase tracking-widest mt-1">Full Stack Shinobi &copy; {new Date().getFullYear()}</p>
           </div>
         </div>

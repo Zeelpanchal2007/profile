@@ -38,7 +38,7 @@ export default function Navbar() {
               className="w-full h-full object-cover"
             />
           </span>
-          Zeel.
+          Panchal Zeel.
         </a>
 
         {/* Desktop Links */}

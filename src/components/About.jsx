@@ -78,14 +78,16 @@ export default function About() {
             <div className="w-[300px] md:w-[400px] p-6 md:p-10 flex flex-col items-center justify-center text-center border-b-2 md:border-b-0 md:border-r-2 border-[#C8B28D]/30 relative z-10 shrink-0">
               <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-8 border-[#2A2A2A] shadow-xl overflow-hidden mb-6 relative bg-[#1A1A1A]">
                 <img 
-                  src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=600&auto=format&fit=crop" 
-                  alt="Pug Profile" 
-                  className="w-full h-full object-cover grayscale-[40%] hover:grayscale-0 transition-all duration-500"
+                  src="/profile.jpg" 
+                  alt="Ninja Profile" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=600&auto=format&fit=crop"; }}
                 />
+                {/* Optional overlay for gritty effect */}
+                <div className="absolute inset-0 bg-[#0a0002]/20 mix-blend-overlay"></div>
               </div>
-              
               <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-[#111] mb-2 drop-shadow-sm">
-                Zeel Panchal
+                Panchal Zeel
               </h2>
               
               <h3 className="text-xl md:text-3xl font-bold uppercase tracking-widest text-[#C83200] drop-shadow-sm" style={{ fontFamily: 'var(--font-sans)' }}>
