@@ -39,16 +39,16 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-6">
-          <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
+          <a href="https://github.com/Zeelpanchal2007" className="text-foreground/50 hover:text-primary transition-colors">
             <GithubIcon />
           </a>
-          <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
+          <a href="https://www.linkedin.com/in/panchal-zeel-4b1b933b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="text-foreground/50 hover:text-primary transition-colors">
             <LinkedinIcon />
           </a>
           <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
             <TwitterIcon />
           </a>
-          <a href="#" className="text-foreground/50 hover:text-primary transition-colors">
+          <a href="panchalzeel2007@gmail.com" className="text-foreground/50 hover:text-primary transition-colors">
             <Mail size={20} />
           </a>
         </div>
