@@ -113,6 +113,62 @@ export default function About() {
               <div className="px-4 py-1 bg-green-800 text-[#F5EEDC] font-bold text-sm tracking-widest border-2 border-[#111] uppercase shadow-sm">
                 Active Duty
               </div>
+
+              {/* BINGO BOOK ENTRY (Wanted Poster) */}
+              <div className="mt-12 w-full bg-[#DFD1B6] border-[3px] border-[#111] shadow-[6px_6px_0px_#111] p-5 flex flex-col items-center rotate-[-1.5deg] relative z-20 group hover:rotate-0 hover:shadow-[8px_8px_0px_#111] transition-all duration-300">
+                
+                {/* Red Classified Stamp */}
+                <div className="absolute top-4 right-[-8px] border-2 border-[#A64A4A] text-[#A64A4A] font-black uppercase text-[10px] md:text-xs tracking-widest px-2 py-0.5 rotate-[15deg] opacity-90 z-10 shadow-sm mix-blend-multiply">
+                  CLASSIFIED
+                </div>
+
+                <h4 className="text-xl md:text-2xl font-black text-[#111] uppercase tracking-[0.15em] border-b-[3px] border-[#111] pb-2 w-full text-center mb-5" style={{ fontFamily: 'var(--font-sans)' }}>
+                  Bingo Book
+                </h4>
+
+                {/* Mugshot Placeholder */}
+                <div className="w-24 h-24 md:w-28 md:h-28 border-[3px] border-[#111] bg-[#1a1a1a] mb-5 overflow-hidden shadow-inner flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500 relative">
+                  <img src="/profile.jpg" alt="Target Mugshot" className="w-full h-full object-cover mix-blend-luminosity opacity-90 group-hover:mix-blend-normal group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-900/50 pointer-events-none transition-colors" />
+                </div>
+
+                {/* Info Text Fields */}
+                <div className="w-full text-left space-y-4 font-bold text-[#111] text-xs sm:text-sm uppercase tracking-wide">
+                  
+                  <div className="border-b-2 border-[#111]/30 pb-2">
+                    <span className="text-[#8B3A3A] text-[10px] sm:text-xs tracking-widest block mb-1">Target Alias:</span>
+                    <span className="text-sm sm:text-base">Panchal Zeel</span> <br/>
+                    <span className="text-[10px] sm:text-xs text-[#555] normal-case">_picasso_expresso (Instagram)</span>
+                  </div>
+                  
+                  <div className="border-b-2 border-[#111]/30 pb-2">
+                    <span className="text-[#8B3A3A] text-[10px] sm:text-xs tracking-widest block mb-1">Threat Level:</span>
+                    <span className="text-sm sm:text-base">S-Rank <span className="text-xs text-[#555]">(Full-Stack Engineer)</span></span>
+                  </div>
+
+                  <div className="pt-1">
+                    <span className="text-[#8B3A3A] text-[10px] sm:text-xs tracking-widest block mb-3">Intel / Comm Channels:</span>
+                    <ul className="space-y-3 text-[11px] sm:text-[13px] normal-case tracking-normal font-semibold text-[#222]">
+                      <li className="flex items-center gap-3">
+                        <span className="shrink-0 text-base drop-shadow-sm" title="Messenger Hawk (Email)">🦅</span>
+                        <a href="mailto:panchalzeel2007@gmail.com" className="hover:text-[#A64A4A] transition-colors break-all border-b border-transparent hover:border-[#A64A4A]">panchalzeel2007@gmail.com</a>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="shrink-0 text-base drop-shadow-sm" title="Scroll Archive (GitHub)">📜</span>
+                        <a href="https://github.com/Zeelpanchal2007" target="_blank" rel="noopener noreferrer" className="hover:text-[#A64A4A] transition-colors break-all border-b border-transparent hover:border-[#A64A4A]">github.com/Zeelpanchal2007</a>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="shrink-0 text-base drop-shadow-sm" title="Ninja Alliance (LinkedIn)">🤝</span>
+                        <a href="https://www.linkedin.com/in/panchal-zeel-4b1b933b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="hover:text-[#A64A4A] transition-colors break-all border-b border-transparent hover:border-[#A64A4A]">linkedin.com/in/panchal-zeel</a>
+                      </li>
+                      <li className="flex items-center gap-3">
+                        <span className="shrink-0 text-base drop-shadow-sm" title="Ninja Info Card (Resume)">🌐</span>
+                        <a href="/RESUME_Zeel.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-[#A64A4A] transition-colors break-all border-b border-transparent hover:border-[#A64A4A]">Ninja Info Card (Resume)</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Inner Content - Right Column (Ninja Stats & Info) */}

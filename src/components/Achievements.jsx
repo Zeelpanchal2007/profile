@@ -3,19 +3,19 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const achievements = [
   {
-    title: "Chunin Exams Winner",
-    desc: "Top performer at the Global Web Hackathon 2024.",
-    type: "medal"
+    title: "AI-NEXUS WINNER",
+    desc: "TOP PERFORMER AT THE AI HACKATHON FOR TRAINING ADVANCED MODELS.",
+    type: "ai"
   },
   {
-    title: "Master of React",
-    desc: "Completed advanced architecture certification.",
-    type: "scroll"
+    title: "ACADEMIC JONIN",
+    desc: "ACHIEVED AN OUTSTANDING FINAL CGPA OF 9.17 IN COMPUTER ENGINEERING.",
+    type: "academic"
   },
   {
-    title: "Speed Demon",
-    desc: "Achieved 100/100 Lighthouse score on 5 projects.",
-    type: "badge"
+    title: "API SUMMONER",
+    desc: "Expert in designing, building, and comprehensively testing robust RESTful APIs and backend architectures.",
+    type: "api"
   }
 ];
 
@@ -34,20 +34,39 @@ function AchievementItem({ item, index }) {
       <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-foreground/10 flex items-center justify-center bg-background relative z-10 overflow-hidden group-hover:border-primary transition-colors duration-500">
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         
-        {/* Placeholder icons based on type */}
-        {item.type === 'medal' && (
-          <svg className="w-16 h-16 text-yellow-500 group-hover:text-yellow-400 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+        {/* Custom SVG icons based on type */}
+        {item.type === 'ai' && (
+          <svg className="w-16 h-16 text-purple-500 group-hover:text-purple-400 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Detailed Rinnegan Eye */}
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 21C6.477 21 2 12 2 12s4.477-9 10-9 10 9 10 9-4.477 9-10 9z" />
+            <circle cx="12" cy="12" r="7.5" strokeWidth={1} strokeDasharray="1 2" />
+            <circle cx="12" cy="12" r="5.5" strokeWidth={1} />
+            <circle cx="12" cy="12" r="3.5" strokeWidth={1} />
+            <circle cx="12" cy="12" r="1.5" strokeWidth={1.5} />
+            <circle cx="12" cy="12" r="0.5" strokeWidth={2} />
           </svg>
         )}
-        {item.type === 'scroll' && (
-          <svg className="w-16 h-16 text-primary drop-shadow-[0_0_15px_rgba(255,107,0,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        {item.type === 'academic' && (
+          <svg className="w-16 h-16 text-orange-500 group-hover:text-orange-400 drop-shadow-[0_0_15px_rgba(249,115,22,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Detailed Ninja Scroll */}
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M4 7h16v10H4z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2 8h2v8H2zM20 8h2v8h-2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 7v10M17 7v10" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M12 7v10" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 12h4" />
+            <circle cx="12" cy="12" r="1.5" strokeWidth={1.5} />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 9h2m-2 4h2M17 9h2m-2 4h2" />
           </svg>
         )}
-        {item.type === 'badge' && (
-          <svg className="w-16 h-16 text-secondary drop-shadow-[0_0_15px_rgba(225,29,72,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        {item.type === 'api' && (
+          <svg className="w-16 h-16 text-teal-400 group-hover:text-teal-300 drop-shadow-[0_0_15px_rgba(45,212,191,0.5)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* Detailed Chakra Sphere / Rasengan */}
+            <circle cx="12" cy="12" r="10" strokeWidth={1.2} strokeDasharray="4 2" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M5 12a7 7 0 1014 0 7 7 0 00-14 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 5a7 7 0 100 14 7 7 0 000-14z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2} d="M8.5 8.5a5 5 0 107 7 5 5 0 00-7-7z" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.5 14.5a3.5 3.5 0 105-5 3.5 3.5 0 00-5 5z" />
+            <circle cx="12" cy="12" r="1.5" strokeWidth={1.5} />
           </svg>
         )}
       </div>

@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const journey = [
-  { year: "2022", title: "Started Coding", desc: "Awakened the code chakra. Learned the basics of HTML, CSS, and JavaScript.", rank: "Academy Student" },
-  { year: "2023", title: "Web Development", desc: "Mastered frontend tools and started building responsive interfaces.", rank: "Genin" },
-  { year: "2024", title: "Diploma Projects", desc: "Completed challenging academic missions and built complex applications.", rank: "Chunin" },
-  { year: "2025", title: "Hackathons", desc: "Competed in high-stakes environments, rapid prototyping, and team collaboration.", rank: "Jonin" },
-  { year: "2026", title: "Full Stack Development", desc: "Achieved mastery over both frontend and backend architectures.", rank: "ANBU / Kage Level" }
+  { year: "2022", title: "Awakened the Coding Chakra", desc: "Started my software development journey by learning HTML, CSS, and JS. Built early websites and discovered a passion for solving problems through code.", rank: "Academy Student" },
+  { year: "2023", title: "First Professional Mission", desc: "Completed a frontend internship focusing on HTML, CSS, and JS. Worked on real-world projects and gained valuable industry experience.", rank: "Genin" },
+  { year: "2024", title: "Python Sage Training", desc: "Completed a Python and Django internship, mastering backend principles, APIs, and databases, transitioning into full-stack development.", rank: "Chunin" },
+  { year: "2025", title: "Full Stack Shinobi Path", desc: "Mastered full-stack development with React, FastAPI, and PostgreSQL. Built complex projects, strengthening both frontend and backend expertise.", rank: "Jonin" },
+  { year: "2026", title: "AI & Hackathon Evolution", desc: "Expanded into AI and Machine Learning. Actively competed in hackathons to build intelligent applications and solve real-world problems.", rank: "ANBU Candidate" }
 ];
 
 export default function Timeline() {
@@ -28,7 +28,7 @@ export default function Timeline() {
           <p className="text-foreground/60 uppercase tracking-widest font-mono text-sm">Hokage Journey Timeline</p>
         </div>
 
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           {/* Animated Path Line */}
           <div className="absolute left-[15px] md:left-1/2 top-0 bottom-0 w-1 bg-foreground/10 transform md:-translate-x-1/2 rounded-full overflow-hidden">
             <motion.div 
