@@ -2,22 +2,20 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-function ParticleSwarm({ count = 2000 }) {
-  const points = useRef(null);
+const PARTICLE_COUNT = 2500;
+const particlesPosition = new Float32Array(PARTICLE_COUNT * 3);
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+  const r = 10 * Math.cbrt(Math.random());
+  const theta = Math.random() * 2 * Math.PI;
+  const phi = Math.acos(2 * Math.random() - 1);
+  
+  particlesPosition[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+  particlesPosition[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+  particlesPosition[i * 3 + 2] = r * Math.cos(phi);
+}
 
-  const particlesPosition = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      const r = 10 * Math.cbrt(Math.random());
-      const theta = Math.random() * 2 * Math.PI;
-      const phi = Math.acos(2 * Math.random() - 1);
-      
-      positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-      positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-      positions[i * 3 + 2] = r * Math.cos(phi);
-    }
-    return positions;
-  }, [count]);
+function ParticleSwarm() {
+  const points = useRef(null);
 
   useFrame((state) => {
     if (points.current) {
@@ -31,7 +29,7 @@ function ParticleSwarm({ count = 2000 }) {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={particlesPosition.length / 3}
+          count={PARTICLE_COUNT}
           array={particlesPosition}
           itemSize={3}
         />
@@ -39,7 +37,7 @@ function ParticleSwarm({ count = 2000 }) {
       <pointsMaterial
         size={0.06}
         color="#E11D48"
-        transparent
+        transparent={true}
         opacity={0.7}
         sizeAttenuation={true}
         blending={THREE.AdditiveBlending}
@@ -107,9 +105,9 @@ function RinneSharingan() {
 
 export default function HeroScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
+    <Canvas dpr={[1, 1.5]} camera={{ position: [0, 0, 15], fov: 60 }}>
       <fog attach="fog" args={['#0a0002', 5, 25]} />
-      <ParticleSwarm count={3500} />
+      <ParticleSwarm />
       <RinneSharingan />
     </Canvas>
   );

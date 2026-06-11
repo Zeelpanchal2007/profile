@@ -15,22 +15,41 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'glass-panel py-4 shadow-lg' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 w-full z-40 transition-[padding] duration-300 ${
+        isScrolled ? 'py-4' : 'py-6'
       }`}
     >
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+      {/* Background layer for smooth opacity transition without animating blur */}
+      <div 
+        className={`absolute inset-0 w-full h-full glass-panel transition-opacity duration-300 -z-10 ${
+          isScrolled ? 'opacity-100 shadow-lg' : 'opacity-0'
+        }`}
+      />
+      
+      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center relative z-10">
         {/* Logo */}
-        <a href="#" className="text-2xl font-black text-foreground flex items-center gap-2 group">
+        <a 
+          href="#" 
+          onClick={(e) => handleNavClick(e, 'body')}
+          className="text-2xl font-black text-foreground flex items-center gap-2 group"
+        >
           <span className="transition-transform group-hover:rotate-[360deg] duration-700 ease-in-out inline-block w-8 h-8 rounded-full overflow-hidden border border-primary/30 shadow-[0_0_10px_rgba(255,87,34,0.3)] group-hover:shadow-[0_0_15px_rgba(255,87,34,0.6)]">
             <img 
               src="/sharingan.png" 
@@ -47,6 +66,7 @@ export default function Navbar() {
             <a 
               key={link.name} 
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors uppercase tracking-wider relative group"
             >
               {link.name}
@@ -55,6 +75,7 @@ export default function Navbar() {
           ))}
           <a 
             href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-background transition-colors text-sm font-bold uppercase tracking-widest rounded-sm"
           >
             Send a Hawk

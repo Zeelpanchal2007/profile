@@ -35,7 +35,7 @@ export default function Hero() {
       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
     >
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0 opacity-60">
+      <div className="absolute inset-0 z-0 opacity-60 w-full h-full pointer-events-none">
         <HeroScene />
       </div>
 
